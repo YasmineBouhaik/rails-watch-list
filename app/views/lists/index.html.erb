@@ -2,31 +2,21 @@
   <div class="container">
     <h1>Save your movies</h1>
     <p>Classic ones</p>
-    <button type="button" class="btn btn-primary">Create your lists</button>
+    <div>
+    <%= link_to "Add a list", new_list_path, class: 'btn btn-flat'%>
+    </div>
   </div>
 </div>
 
-<div class="container">
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
+<div class="container py-5">
   <div class="row">
-    <div class="col-12 col-lg-3">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1528041119984-da3a9f8d04d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2818&q=80)">
-      Disney
+    <% @lists.each do |list| %>
+      <div class="col-12 col-lg-4">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.movie_url %>)">
+          <%= link_to list.name, list_path(list) %>
+          <%= link_to "+", list_path(list),method: :delete, data: {confirm: "Are you sure"},class: "card-remove-link" %>
+        </div>
       </div>
-    </div>
-    <div class="col-12 col-lg-3">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1485846234645-a62644f84728?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2918&q=80)">
-      Action
-      </div>
-    </div>
-    <div class="col-12 col-lg-3">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1474552226712-ac0f0961a954?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1771&q=80)">
-      Romance
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>

@@ -12,4 +12,14 @@
 @import "components/index";
 @import "components/banner";
 @import "components/card";
+@import "components/button";
 @import "pages/index";
+
+a {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    color: white;
+    text-decoration: none;
+}

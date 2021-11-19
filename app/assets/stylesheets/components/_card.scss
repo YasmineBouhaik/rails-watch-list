@@ -12,3 +12,15 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+.card-remove-link {
+  color: white;
+  position: absolute;
+  top: 0px;
+  right: 22px;
+  transform: rotate(45deg);
+  text-decoration: none;
+  &:hover{
+    color: red;
+  }
+}
