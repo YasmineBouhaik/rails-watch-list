@@ -4,10 +4,22 @@
     <div>
     <br>
     <br>
-    <button type="button" class="btn btn-warning"><%= link_to "Add a movie"%></button>
+    <button type="button" class="btn btn-warning"><%= link_to "Add a movie", new_list_bookmark_path(@list) %></button>
     </div>
     <br>
     <br>
     <%= link_to "Homepage", root_path, class: 'btn btn-flat' %>
+  </div>
+</div>
+<br>
+
+<div class="container">
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
   </div>
 </div>
